@@ -6,13 +6,18 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
+using System.IO; //For stream.
+
 namespace MHRServices
 {
     public class MHRService : IMHRService
     {
-        public string processJSON(List<Dictionary<string, object>> jsonString)
+        public string processJSON(Stream jsonString)
         {
-            return "success";
+            using (var reader = new StreamReader(jsonString))
+            {
+                return "You posted: " + reader.ReadToEnd();
+            }
         }
 
     }

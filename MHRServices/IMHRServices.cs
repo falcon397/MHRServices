@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
+using System.IO;  //For Stream.
+
 namespace MHRServices
 {
     [ServiceContract]
@@ -17,7 +19,7 @@ namespace MHRServices
             ResponseFormat = WebMessageFormat.Json,
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "/save")]
-        string processJSON(List<Dictionary<string,object>> jsonString);
+        string processJSON(Stream jsonString);
     }
 }
 
