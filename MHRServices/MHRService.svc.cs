@@ -12,12 +12,9 @@ namespace MHRServices
 {
     public class MHRService : IMHRService
     {
-        public string processJSON(Stream jsonString)
+        public string processJSON(IDictionary<string, object> jsonString)
         {
-            using (var reader = new StreamReader(jsonString))
-            {
-                return "You posted: " + reader.ReadToEnd();
-            }
+                return "You posted: ";
         }
 
     }

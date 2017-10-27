@@ -19,7 +19,7 @@ namespace MHRServices
             ResponseFormat = WebMessageFormat.Json,
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "/save")]
-        string processJSON(Stream jsonString);
+        string processJSON(IDictionary<string, object> jsonString);
     }
 }
 
