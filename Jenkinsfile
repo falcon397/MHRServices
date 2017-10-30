@@ -46,8 +46,8 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                bat 'del Z:\\Websites\\%strProjectName%\\**'
-                bat 'xcopy "%strProjectName%\\obj\\Release\\_PublishedWebsites\\%strProjectName%\\**" "Z:\\Websites\\%strProjectName%\\" /s /y'
+                bat 'del Z:\\Websites\\dev\\%strProjectName%\\**'
+                bat 'xcopy "%strProjectName%\\obj\\Release\\_PublishedWebsites\\%strProjectName%\\**" "Z:\\Websites\\dev\\%strProjectName%\\" /s /y'
             }
         }
     }
